@@ -51,8 +51,8 @@ print(waypoints)
 
 for dict in waypoints:
     for key, value in dict.items():
-        print(key,value)
-
-# for x in waypoints: 
+        print(f'{key} : {value}')
+# used print f to get it a little cleaner on my terminal
+# for x in waypoints:
 #         for i in x:
 #             print(x[i])
