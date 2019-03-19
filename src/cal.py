@@ -22,3 +22,33 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+renderedCalendar = calendar.TextCalendar()
+
+
+if len(sys.argv) == 1:
+    # cast it to string? i dunno.
+    month = datetime.now().month
+    month_str = datetime.now().strftime('%B')
+    year = datetime.now().year
+    print(f'The month is {month_str} and the year is: {year}')
+    # don't forget the order! year first, month next when rendering!
+    renderedCalendar.prmonth(int(year), int(month))
+elif len(sys.argv) == 2:
+    month = sys.argv[1]
+    year = datetime.now().year
+
+    print(
+        f"I'm going to assume you entered today's month! \n The month is : {sys.argv[1]}. The year is {year}. \n Now, check out the calandar!")
+    renderedCalendar.prmonth(int(year), int(month))
+
+
+elif len(sys.argv) == 3:
+    month = sys.argv[1]
+    year = sys.argv[2]
+    print(
+        f"Great job! I'm going to render the {sys.argv[1]} month and year {sys.argv[2]}")
+    renderedCalendar.prmonth(int(year), int(month))
+
+else:
+    print("Invalid command:")
