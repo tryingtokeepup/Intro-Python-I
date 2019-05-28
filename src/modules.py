@@ -22,8 +22,9 @@ print(sys.version)
 # See the docs for the OS module: https://docs.python.org/3.7/library/os.html
 
 # Print the current process ID
-print(os.geteuid())
-
+# whoops, this returns the current process's effective user id
+# print(os.geteuid())
+print(os.getpid())
 # Print the current working directory (cwd):
 print(os.getcwd())
 
